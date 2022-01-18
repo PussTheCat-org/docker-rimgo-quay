@@ -7,4 +7,6 @@ services:
     container_name: rimgo
     ports:
       - "127.0.0.1:3000:3000" # Replace with "3000:3000" if you don't use a reverse proxy
+    volumes:
+      - ./config.yml:/app/config.yml
     restart: unless-stopped
