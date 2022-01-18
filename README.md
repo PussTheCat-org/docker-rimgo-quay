@@ -2,11 +2,9 @@
 
 A [rimgo](https://codeberg.org/video-prize-ranch/rimgo) image, on Quay.
 
-https://quay.io/repository/pussthecatorg/rimgo
+[Quay page](https://quay.io/repository/pussthecatorg/rimgo) | [GitHub page](https://github.com/PussTheCat-org/rimgo-quay)
 
-https://github.com/PussTheCat-org/rimgo-quay
-
-This image mostly exist for the [PussTheCat.org](https://pussthecat.org/) [instance](#) (coming soon), but others are free to use it.
+This image mostly exist for the [PussTheCat.org](https://pussthecat.org/) [instance](https://rimgo.pussthecat.org/), but others are free to use it.
 
 ## Usage:
 
