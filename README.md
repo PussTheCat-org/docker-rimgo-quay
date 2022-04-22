@@ -9,9 +9,8 @@ This image mostly exist for the [PussTheCat.org](https://pussthecat.org/) [insta
 ## Usage:
 
 - Download (or copy the content of) the `docker-compose.yml` 
-- Download (or copy the content of) the `config.yml` from this repository, or from upstream: https://codeberg.org/video-prize-ranch/rimgo/src/branch/main/config.yml
-- Customize the `config.yml` file how you want
-- Move both files to the folder you want
+- (Optional) Customize the [environment variables](https://codeberg.org/video-prize-ranch/rimgo#environment-variables) how you want
+- Move the docker-compose.yml file to the folder you want
 - `docker-compose up -d`
 
 ## Credit:
