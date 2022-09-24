@@ -5,7 +5,7 @@ RUN apk --no-cache add git ca-certificates
 RUN git clone https://codeberg.org/video-prize-ranch/rimgo .
 
 RUN go mod download
-RUN CGO_ENABLED=0 go build
+RUN CGO_ENABLED=0 go build -ldflags "-X codeberg.org/video-prize-ranch/rimgo/pages.VersionInfo=$(date '+%Y-%m-%d')-$(git rev-list --abbrev-commit -1 HEAD)"
 
 FROM scratch as bin
 
