@@ -2,7 +2,7 @@ FROM golang:alpine AS build
 
 WORKDIR /src
 RUN apk --no-cache add git ca-certificates nodejs npm
-RUN git clone https://codeberg.org/video-prize-ranch/rimgo .
+RUN git clone https://codeberg.org/rimgo/rimgo .
 
 RUN npx tailwindcss -i static/tailwind.css -o static/app.css -m
 RUN go mod download
