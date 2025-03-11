@@ -4,6 +4,7 @@ WORKDIR /src
 RUN apk --no-cache add git ca-certificates nodejs npm
 RUN git clone https://codeberg.org/rimgo/rimgo .
 
+RUN npm install -D tailwindcss@3 postcss autoprefixer
 RUN npx tailwindcss -i static/tailwind.css -o static/app.css -m
 RUN go mod download
 RUN CGO_ENABLED=0 go build -ldflags "-X codeberg.org/rimgo/rimgo/pages.VersionInfo=$(date '+%Y-%m-%d')-$(git rev-list --abbrev-commit -1 HEAD)"
