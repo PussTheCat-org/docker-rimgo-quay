@@ -26,6 +26,13 @@ jobs:
       uses: docker/setup-buildx-action@v1
 # arm64 specific
 
+    - name: Get Time
+      id: time
+      uses: nanzm/get-time-action@887e4db9af58ebae64998b7105921b816af77977 # v2.0
+      with:
+        timeZone: 1
+        format: "YYYYMMDDHHmmss"
+
     - name: Check Out Repo
       uses: actions/checkout@v2
 
@@ -44,5 +51,7 @@ jobs:
         platforms: linux/amd64,linux/arm64/v8
         labels: quay.expires-after=24w
         push: true
-        tags: quay.io/pussthecatorg/rimgo:latest
+        tags: |
+          quay.io/pussthecatorg/rimgo:latest
+          quay.io/pussthecatorg/rimgo:build${{ steps.time.outputs.time }}
         build-args: release=1
