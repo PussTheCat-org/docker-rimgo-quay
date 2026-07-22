@@ -4,11 +4,11 @@ WORKDIR /src
 RUN apk --no-cache add git ca-certificates nodejs pnpm
 RUN git clone https://codeberg.org/rimgo/rimgo .
 
-RUN pnpm install && pnpm run build
+RUN pnpm install --dangerously-allow-all-builds && pnpm run build
 RUN go mod download
 RUN CGO_ENABLED=0 go build -ldflags "-X codeberg.org/rimgo/rimgo/pages.VersionInfo=$(date '+%Y-%m-%d')-$(git rev-list --abbrev-commit -1 HEAD)"
 
-FROM scratch as bin
+FROM scratch AS bin
 
 WORKDIR /app
 COPY --from=build /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
