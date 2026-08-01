@@ -1,12 +1,11 @@
 version: "3"
 
 services:
-
   rimgo:
     image: quay.io/pussthecatorg/rimgo:latest
     container_name: rimgo
     ports:
-      - "127.0.0.1:3000:3000" # Replace with "3000:3000" if you don't use a reverse proxy
+      - "127.0.0.1:3000:3000" # Replace with "3000:3000" if you don't use a reverse proxy
     environment:
       - "PORT=3000"
       - "ADDRESS=0.0.0.0"
